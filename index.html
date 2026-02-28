@@ -1,13 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Owais Makroo - Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owais Makroo | Applied Scientist</title>
 
+  <meta name="description" content="Owais Makroo - Machine Learning Researcher focusing on privacy, robustness, and training dynamics. Incoming Applied Scientist at Amazon." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400">
+
+  <!-- HERO -->
+  <header class="relative min-h-screen flex items-center overflow-hidden">
+
+    <div class="absolute inset-0 bg-cover bg-center"
+         style="background-image: url('background.png');">
+    </div>
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6">
+      <h1 class="text-6xl md:text-8xl font-light text-white">
+        Owais Makroo
+      </h1>
+
+      <p class="mt-6 text-xl md:text-2xl text-zinc-300 max-w-3xl leading-relaxed">
+        I build AI systems that live between clean math and messy production,
+        thinking about privacy, robustness, machine unlearning, and training dynamics.
+        Incoming Applied Scientist at Amazon.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4 text-sm font-mono">
+        <a href="mailto:makroo.owais@gmail.com"
+           class="px-4 py-2 border border-white/10 rounded-full hover:text-blue-400">
+          Email
+        </a>
+
+        <a href="https://linkedin.com/in/makroo-owais" target="_blank"
+           class="px-4 py-2 border border-white/10 rounded-full hover:text-blue-400">
+          LinkedIn
+        </a>
+
+        <a href="https://github.com/MakrooOwais" target="_blank"
+           class="px-4 py-2 border border-white/10 rounded-full hover:text-blue-400">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-5xl mx-auto px-6 py-24 space-y-28">
+
+    <!-- RESEARCH -->
+    <section>
+      <h2 class="text-4xl text-white mb-10">Research</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-blue-400/40 transition">
+          <h3 class="text-zinc-200 font-medium">
+            SALSA: A Secure, Adaptive and Label-Agnostic Scalable Algorithm for Machine Unlearning
+          </h3>
+          <p class="text-sm text-blue-400 mt-2">UAI 2025</p>
+          <a href="https://proceedings.mlr.press/v286/makroo25a.html"
+             target="_blank"
+             class="mt-3 inline-block text-sm hover:text-blue-400">
+            View Paper →
+          </a>
+        </div>
+
+        <!-- Add other papers here same way -->
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2 class="text-4xl text-white mb-4">Things I’ve Built</h2>
+
+      <p class="text-zinc-400 mb-10 max-w-2xl">
+        Research papers are ideas. These are implementations.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-blue-400/40 transition">
+          <h3 class="text-zinc-200 font-medium text-lg">
+            SIREN – Explainable AI Framework
+          </h3>
+          <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
+            Gold Medal at InterIIT Tech Meet. Interpretability framework for detecting AI-generated images.
+          </p>
+          <a href="https://github.com/MakrooOwais/SIREN"
+             target="_blank"
+             class="mt-4 inline-block text-sm hover:text-blue-400">
+            View on GitHub →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXTRACURRICULARS -->
+    <section>
+      <h2 class="text-4xl text-white mb-10">Beyond Research</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div>
+          <img src="extras/lifting.jpg"
+               class="rounded-2xl h-64 w-full object-cover border border-white/10" />
+          <h3 class="text-zinc-200 font-medium mt-4">Strength & Athletics</h3>
+          <p class="text-sm text-zinc-400">
+            Weightlifting and throwing events for IIT Kharagpur.
+          </p>
+        </div>
+
+        <div>
+          <img src="extras/hiking.jpg"
+               class="rounded-2xl h-64 w-full object-cover border border-white/10" />
+          <h3 class="text-zinc-200 font-medium mt-4">Mountains & Water</h3>
+          <p class="text-sm text-zinc-400">
+            Hiking, trekking, climbing, swimming, kayaking.
+          </p>
+        </div>
+
+        <div>
+          <img src="extras/drawing.jpg"
+               class="rounded-2xl h-64 w-full object-cover border border-white/10" />
+          <h3 class="text-zinc-200 font-medium mt-4">Creative Work</h3>
+          <p class="text-sm text-zinc-400">
+            Drawing and reading.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/5 py-12 text-center text-sm text-zinc-600">
+    © 2026 Owais Makroo
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
