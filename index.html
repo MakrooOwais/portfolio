@@ -7,152 +7,252 @@
 
   <meta name="description" content="Owais Makroo - Machine Learning Researcher focusing on privacy, robustness, and training dynamics. Incoming Applied Scientist at Amazon." />
 
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
 </head>
+
 <body class="bg-[#0a0a0a] text-zinc-400">
 
-  <!-- HERO -->
-  <header class="relative min-h-screen flex items-center overflow-hidden">
+<!-- HERO -->
+<header class="relative min-h-screen flex items-center overflow-hidden">
 
-    <div class="absolute inset-0 bg-cover bg-center"
-         style="background-image: url('background.png');">
+  <div class="absolute inset-0 bg-cover bg-center"
+       style="background-image: url('background.png');">
+  </div>
+
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6">
+    <h1 class="text-6xl md:text-8xl font-light text-white">
+      Owais Makroo
+    </h1>
+
+    <p class="mt-6 text-xl md:text-2xl text-zinc-300 max-w-3xl leading-relaxed">
+      I build AI systems that live between clean math and messy production,
+      thinking about privacy, robustness, machine unlearning, and training dynamics.
+      Incoming Applied Scientist at Amazon.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-4 text-sm font-mono">
+      <a href="mailto:makroo.owais@gmail.com"
+         class="px-4 py-2 border border-zinc-700 rounded-full hover:text-blue-400">
+        Email
+      </a>
+
+      <a href="https://linkedin.com/in/makroo-owais" target="_blank"
+         class="px-4 py-2 border border-zinc-700 rounded-full hover:text-blue-400">
+        LinkedIn
+      </a>
+
+      <a href="https://github.com/MakrooOwais" target="_blank"
+         class="px-4 py-2 border border-zinc-700 rounded-full hover:text-blue-400">
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-24 space-y-28">
+
+<!-- RESEARCH -->
+<section>
+  <h2 class="text-4xl text-white mb-10">Research</h2>
+
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- Paper Card -->
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
+      <h3 class="text-zinc-200 font-medium">
+        SALSA: A Secure, Adaptive and Label-Agnostic Scalable Algorithm for Machine Unlearning
+      </h3>
+      <p class="text-sm text-blue-400 mt-2">UAI 2025</p>
+      <a href="https://proceedings.mlr.press/v286/makroo25a.html"
+         target="_blank"
+         class="mt-3 inline-block text-sm hover:text-blue-400">
+        View Paper →
+      </a>
     </div>
 
-    <div class="absolute inset-0 bg-black/60"></div>
-
-    <div class="relative z-10 max-w-5xl mx-auto px-6">
-      <h1 class="text-6xl md:text-8xl font-light text-white">
-        Owais Makroo
-      </h1>
-
-      <p class="mt-6 text-xl md:text-2xl text-zinc-300 max-w-3xl leading-relaxed">
-        I build AI systems that live between clean math and messy production,
-        thinking about privacy, robustness, machine unlearning, and training dynamics.
-        Incoming Applied Scientist at Amazon.
-      </p>
-
-      <div class="mt-8 flex flex-wrap gap-4 text-sm font-mono">
-        <a href="mailto:makroo.owais@gmail.com"
-           class="px-4 py-2 border border-white/10 rounded-full hover:text-blue-400">
-          Email
-        </a>
-
-        <a href="https://linkedin.com/in/makroo-owais" target="_blank"
-           class="px-4 py-2 border border-white/10 rounded-full hover:text-blue-400">
-          LinkedIn
-        </a>
-
-        <a href="https://github.com/MakrooOwais" target="_blank"
-           class="px-4 py-2 border border-white/10 rounded-full hover:text-blue-400">
-          GitHub
-        </a>
-      </div>
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
+      <h3 class="text-zinc-200 font-medium">
+        The Hidden Cost of Modeling p(x): Vulnerability to Membership Inference Attacks in Generative Text Classifiers
+      </h3>
+      <p class="text-sm text-blue-400 mt-2">NeurIPS 2025 Workshop</p>
+      <a href="https://openreview.net/pdf?id=MNVmoRKWae"
+         target="_blank"
+         class="mt-3 inline-block text-sm hover:text-blue-400">
+        View Paper →
+      </a>
     </div>
-  </header>
 
-  <!-- MAIN -->
-  <main class="max-w-5xl mx-auto px-6 py-24 space-y-28">
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
+      <h3 class="text-zinc-200 font-medium">
+        Enhanced Identification of Pheochromocytoma and Paragangliomas' Genetic Clusters from CT
+      </h3>
+      <p class="text-sm text-blue-400 mt-2">SPIE Medical Imaging 2025</p>
+      <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13407/134071B/Enhanced-identification-of-pheochromocytoma-and-paragangliomas-genetic-clusters-from-CT/10.1117/12.3047387.full"
+         target="_blank"
+         class="mt-3 inline-block text-sm hover:text-blue-400">
+        View Paper →
+      </a>
+    </div>
 
-    <!-- RESEARCH -->
-    <section>
-      <h2 class="text-4xl text-white mb-10">Research</h2>
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800">
+      <h3 class="text-zinc-200 font-medium">
+        ReSuMe: Retriever-Summarizer Mutual Enhancement via Reinforcement Learning
+      </h3>
+      <p class="text-sm text-blue-400 mt-2">WWW 2026</p>
+    </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
+      <h3 class="text-zinc-200 font-medium">
+        The Hidden Cost of Modeling p(x) (Extended Version)
+      </h3>
+      <p class="text-sm text-blue-400 mt-2">TMLR (Under Review)</p>
+      <a href="https://arxiv.org/html/2510.16122v1"
+         target="_blank"
+         class="mt-3 inline-block text-sm hover:text-blue-400">
+        View Preprint →
+      </a>
+    </div>
 
-        <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-blue-400/40 transition">
-          <h3 class="text-zinc-200 font-medium">
-            SALSA: A Secure, Adaptive and Label-Agnostic Scalable Algorithm for Machine Unlearning
-          </h3>
-          <p class="text-sm text-blue-400 mt-2">UAI 2025</p>
-          <a href="https://proceedings.mlr.press/v286/makroo25a.html"
-             target="_blank"
-             class="mt-3 inline-block text-sm hover:text-blue-400">
-            View Paper →
-          </a>
-        </div>
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800">
+      <h3 class="text-zinc-200 font-medium">
+        Detecting Dataset Outliers via Training Dynamics Clustering
+      </h3>
+      <p class="text-sm text-blue-400 mt-2">UAI 2026 (Under Review)</p>
+    </div>
 
-        <!-- Add other papers here same way -->
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800">
+      <h3 class="text-zinc-200 font-medium">
+        Multi-Headed Deep Feature Learning for Genetic Clusters Identification from CT
+      </h3>
+      <p class="text-sm text-blue-400 mt-2">Biomedical Signal Processing & Control (Under Review)</p>
+    </div>
 
-      </div>
-    </section>
+  </div>
+</section>
 
-    <!-- PROJECTS -->
-    <section>
-      <h2 class="text-4xl text-white mb-4">Things I’ve Built</h2>
+<!-- PROJECTS -->
+<section>
+  <h2 class="text-4xl text-white mb-10">Things I’ve Built</h2>
 
-      <p class="text-zinc-400 mb-10 max-w-2xl">
-        Research papers are ideas. These are implementations.
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
+      <h3 class="text-zinc-200 font-medium text-lg">
+        SIREN – Explainable AI Framework
+      </h3>
+      <p class="mt-3 text-sm text-zinc-400">
+        Gold Medal at InterIIT Tech Meet. Interpretability framework for detecting AI-generated images.
       </p>
+      <a href="https://github.com/MakrooOwais/SIREN"
+         target="_blank"
+         class="mt-4 inline-block text-sm hover:text-blue-400">
+        View on GitHub →
+      </a>
+    </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
+      <h3 class="text-zinc-200 font-medium text-lg">
+        SALSA Unlearning Library
+      </h3>
+      <p class="mt-3 text-sm text-zinc-400">
+        Unified framework for machine unlearning with SALSA and multiple SOTA baselines.
+      </p>
+      <a href="https://github.com/your-username/salsa-unlearn"
+         target="_blank"
+         class="mt-4 inline-block text-sm hover:text-blue-400">
+        View on GitHub →
+      </a>
+    </div>
 
-        <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-blue-400/40 transition">
-          <h3 class="text-zinc-200 font-medium text-lg">
-            SIREN – Explainable AI Framework
-          </h3>
-          <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
-            Gold Medal at InterIIT Tech Meet. Interpretability framework for detecting AI-generated images.
-          </p>
-          <a href="https://github.com/MakrooOwais/SIREN"
-             target="_blank"
-             class="mt-4 inline-block text-sm hover:text-blue-400">
-            View on GitHub →
-          </a>
-        </div>
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
+      <h3 class="text-zinc-200 font-medium text-lg">
+        TorchOptimizer
+      </h3>
+      <p class="mt-3 text-sm text-zinc-400">
+        Parallel Bayesian Optimization framework for PyTorch Lightning models.
+      </p>
+      <a href="https://github.com/MakrooOwais/TorchOptimizer"
+         target="_blank"
+         class="mt-4 inline-block text-sm hover:text-blue-400">
+        View on GitHub →
+      </a>
+    </div>
 
+    <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
+      <h3 class="text-zinc-200 font-medium text-lg">
+        PyPopSim – Population Simulator
+      </h3>
+      <p class="mt-3 text-sm text-zinc-400">
+        Stochastic ecological simulator with logistic and predator-prey models.
+      </p>
+      <a href="https://github.com/MakrooOwais/PyPopSim"
+         target="_blank"
+         class="mt-4 inline-block text-sm hover:text-blue-400">
+        View on GitHub →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXTRACURRICULARS -->
+<section>
+  <h2 class="text-4xl text-white mb-10">Beyond Research</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <!-- Strength & Athletics -->
+    <div class="p-6 rounded-2xl bg-zinc-900 border border-zinc-700 hover:border-blue-400 transition">
+      <div class="overflow-hidden rounded-xl">
+        <img src="extras/lifting.jpg"
+             alt="Weightlifting"
+             class="w-full h-56 object-cover hover:scale-105 transition duration-500">
       </div>
-    </section>
+      <h3 class="text-zinc-200 font-medium mt-5">Strength & Athletics</h3>
+      <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
+        Weightlifting and throwing events for IIT Kharagpur. 
+        Discipline in the gym translates directly into discipline in research.
+      </p>
+    </div>
 
-    <!-- EXTRACURRICULARS -->
-    <section>
-      <h2 class="text-4xl text-white mb-10">Beyond Research</h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <div>
-          <img src="extras/lifting.jpg"
-               class="rounded-2xl h-64 w-full object-cover border border-white/10" />
-          <h3 class="text-zinc-200 font-medium mt-4">Strength & Athletics</h3>
-          <p class="text-sm text-zinc-400">
-            Weightlifting and throwing events for IIT Kharagpur.
-          </p>
-        </div>
-
-        <div>
-          <img src="extras/hiking.jpg"
-               class="rounded-2xl h-64 w-full object-cover border border-white/10" />
-          <h3 class="text-zinc-200 font-medium mt-4">Mountains & Water</h3>
-          <p class="text-sm text-zinc-400">
-            Hiking, trekking, climbing, swimming, kayaking.
-          </p>
-        </div>
-
-        <div>
-          <img src="extras/drawing.jpg"
-               class="rounded-2xl h-64 w-full object-cover border border-white/10" />
-          <h3 class="text-zinc-200 font-medium mt-4">Creative Work</h3>
-          <p class="text-sm text-zinc-400">
-            Drawing and reading.
-          </p>
-        </div>
-
+    <!-- Mountains & Water -->
+    <div class="p-6 rounded-2xl bg-zinc-900 border border-zinc-700 hover:border-blue-400 transition">
+      <div class="overflow-hidden rounded-xl">
+        <img src="extras/hiking.jpg"
+             alt="Hiking and Climbing"
+             class="w-full h-56 object-cover hover:scale-105 transition duration-500">
       </div>
-    </section>
+      <h3 class="text-zinc-200 font-medium mt-5">Mountains & Water</h3>
+      <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
+        Hiking, trekking, climbing, swimming, and kayaking. 
+        The outdoors recalibrates my thinking and builds resilience.
+      </p>
+    </div>
 
-  </main>
+    <!-- Creative Work -->
+    <div class="p-6 rounded-2xl bg-zinc-900 border border-zinc-700 hover:border-blue-400 transition">
+      <div class="overflow-hidden rounded-xl">
+        <img src="extras/drawing.jpg"
+             alt="Drawing and Reading"
+             class="w-full h-56 object-cover hover:scale-105 transition duration-500">
+      </div>
+      <h3 class="text-zinc-200 font-medium mt-5">Creative Work</h3>
+      <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
+        Drawing and reading. I enjoy long-form thinking, quiet focus, and
+        exploring ideas beyond technical work.
+      </p>
+    </div>
 
-  <footer class="border-t border-white/5 py-12 text-center text-sm text-zinc-600">
-    © 2026 Owais Makroo
-  </footer>
+  </div>
+</section>
 
-  <script>
-    lucide.createIcons();
-  </script>
+</main>
+
+<footer class="border-t border-zinc-800 py-12 text-center text-sm text-zinc-600">
+  © 2026 Owais Makroo
+</footer>
 
 </body>
 </html>
