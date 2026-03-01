@@ -94,6 +94,72 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
+    <section>
+      <h2 class="text-4xl text-white mb-6">Experience</h2>
+      <p class="text-zinc-400 max-w-2xl mb-16 leading-relaxed">
+        A progression through scale, research depth, and production responsibility.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-12">
+
+        <!-- Timeline -->
+        <div class="relative">
+
+          <!-- Vertical Line -->
+          <div class="absolute left-4 top-0 bottom-0 w-px bg-zinc-800"></div>
+
+          <div class="space-y-12 relative">
+
+            <!-- Node 1 -->
+            <button onmouseenter="selectExperience(0)" class="experience-node relative flex items-center gap-6 group">
+              <div class="node-dot w-8 h-8 rounded-full border-2 border-blue-500 bg-blue-500 transition">
+              </div>
+              <div>
+                <p class="text-white font-medium">Amazon</p>
+              </div>
+            </button>
+
+            <!-- Node 2 -->
+            <button onmouseenter="selectExperience(1)" class="experience-node relative flex items-center gap-6 group">
+              <div class="node-dot w-8 h-8 rounded-full border-2 border-zinc-600 bg-[#0a0a0a] transition">
+              </div>
+              <div>
+                <p class="text-white font-medium">IIT Kharagpur</p>
+              </div>
+            </button>
+
+            <!-- Node 3 -->
+            <button onmouseenter="selectExperience(2)" class="experience-node relative flex items-center gap-6 group">
+              <div class="node-dot w-8 h-8 rounded-full border-2 border-zinc-600 bg-[#0a0a0a] transition">
+              </div>
+              <div>
+                <p class="text-white font-medium">bhk.ai</p>
+              </div>
+            </button>
+
+            <!-- Node 4 -->
+            <button onmouseenter="selectExperience(3)" class="experience-node relative flex items-center gap-6 group">
+              <div class="node-dot w-8 h-8 rounded-full border-2 border-zinc-600 bg-[#0a0a0a] transition">
+              </div>
+              <div>
+                <p class="text-white font-medium">IIT Jodhpur</p>
+              </div>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Content Panel -->
+        <div class="md:col-span-2">
+          <div id="experienceContent"
+            class="p-8 rounded-2xl bg-[#111111] border border-zinc-800 transition duration-300">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- WRITING -->
     <section>
       <h2 class="text-4xl text-white mb-6">Writing</h2>
@@ -362,6 +428,94 @@
         if (e.target.id === id) closeModal(id);
       });
     });
+
+    const experiences = [
+      {
+        title: "Amazon · Applied Scientist Intern (Core Search)",
+        duration: "May 2025 - Nov 2025 · Bengaluru",
+        content: `
+      <p class="text-zinc-400 mb-4">
+        Worked on improving ESCI ranking models and explored privacy risks in generative classifiers.
+      </p>
+      <p class="text-zinc-400 mb-4">
+        Played with Amazon-scale data using Hadoop and Spark — large query logs, product catalogs, the whole thing.
+      </p>
+      <p class="text-zinc-400 mb-4">
+        Showed that generative classifiers are much more vulnerable to membership inference attacks, exposing real utility-privacy trade-offs.
+      </p>
+    `
+      },
+      {
+        title: "IIT Kharagpur · Research Intern",
+        duration: "Dec 2023 - Apr 2025",
+        content: `
+      <p class="text-zinc-400 mb-4">
+        Designed and built SALSA - a scalable, label-agnostic machine unlearning method.
+      </p>
+      <p class="text-zinc-400 mb-4">
+        Made it 150x faster than prior work while getting significantly closer to oracle performance.
+      </p>
+      <p class="text-zinc-400 mb-4">
+        Also designed a source-agnostic transfer learning framework for smarter layer selection.
+      </p>
+    `
+      },
+      {
+        title: "bhk.ai · ML Research Intern",
+        duration: "May 2024 - Oct 2024 · Remote",
+        content: `
+      <p class="text-zinc-400 mb-4">
+        Automated 3D real estate walkthrough generation with custom room-mapping models.
+      </p>
+      <p class="text-zinc-400 mb-4">
+        Reduced a 7-8 hour manual 3D walkthrough setup process to under 60 seconds by building a fully automated room-mapping and connection pipeline.
+      </p>
+      <p class="text-zinc-400 mb-4">
+        Designed a cross-attention architecture hitting 0.95 Dice score and 97% accuracy.
+      </p>
+    `
+      },
+      {
+        title: "IIT Jodhpur · Research Intern",
+        duration: "May 2024 - Jul 2024",
+        content: `
+      <p class="text-zinc-400 mb-4">
+        Designed custom feature extraction pipelines tailored for medical imaging instead of relying on off-the-shelf backbones.
+      </p>
+      <p class="text-zinc-400 mb-4">
+        Improved performance over existing benchmarks by 7-14% across multiple evaluation metrics.
+      </p>
+      <p class="text-zinc-400 mb-4">
+        Ran extensive ablations to understand which architectural choices actually mattered in low-data clinical settings.
+      </p>
+    `
+      }
+    ];
+
+    function selectExperience(index) {
+      const contentDiv = document.getElementById("experienceContent");
+      const exp = experiences[index];
+
+      contentDiv.innerHTML = `
+      <h3 class="text-white text-xl font-medium mb-2">${exp.title}</h3>
+      <p class="text-sm text-blue-400 mb-6">${exp.duration}</p>
+      ${exp.content}
+    `;
+
+      document.querySelectorAll(".node-dot").forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.remove("border-zinc-600", "bg-[#0a0a0a]");
+          dot.classList.add("border-blue-500", "bg-blue-500");
+        } else {
+          dot.classList.remove("border-blue-500", "bg-blue-500");
+          dot.classList.add("border-zinc-600", "bg-[#0a0a0a]");
+        }
+      });
+    }
+
+    // Default selection
+    selectExperience(0);
+
   </script>
 
 </body>
