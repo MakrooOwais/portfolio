@@ -1,0 +1,40 @@
+experience:
+  description: A progression through scale, research depth, and production responsibility.
+  jobs:
+  - company: Amazon
+    title: Amazon · Applied Scientist Intern (Core Search)
+    duration: May 2025 - Nov 2025 · Bengaluru
+    points:
+    - Worked on improving ESCI ranking models and explored privacy risks in generative
+      classifiers.
+    - Played with Amazon-scale data using Hadoop and Spark — large query logs, product
+      catalogs, the whole thing.
+    - Showed that generative classifiers are much more vulnerable to membership inference
+      attacks, exposing real utility-privacy trade-offs.
+  - company: IIT Kharagpur
+    title: IIT Kharagpur · Research Intern
+    duration: Dec 2023 - Apr 2025
+    points:
+    - Designed and built SALSA - a scalable, label-agnostic machine unlearning method.
+    - Made it 150x faster than prior work while getting significantly closer to oracle
+      performance.
+    - Also designed a source-agnostic transfer learning framework for smarter layer
+      selection.
+  - company: bhk.ai
+    title: bhk.ai · ML Research Intern
+    duration: May 2024 - Oct 2024 · Remote
+    points:
+    - Automated 3D real estate walkthrough generation with custom room-mapping models.
+    - Reduced a 7-8 hour manual 3D walkthrough setup process to under 60 seconds by
+      building a fully automated room-mapping and connection pipeline.
+    - Designed a cross-attention architecture hitting 0.95 Dice score and 97% accuracy.
+  - company: IIT Jodhpur
+    title: IIT Jodhpur · Research Intern
+    duration: May 2024 - Jul 2024
+    points:
+    - Designed custom feature extraction pipelines tailored for medical imaging instead
+      of relying on off-the-shelf backbones.
+    - Improved performance over existing benchmarks by 7-14% across multiple evaluation
+      metrics.
+    - Ran extensive ablations to understand which architectural choices actually mattered
+      in low-data clinical settings.

@@ -1,0 +1,31 @@
+projects:
+  description: Systems and tools designed to explore ideas deeply and make them usable.
+  featured_count: 3
+  project_list:
+  - title: SALSA Unlearning Library
+    description: Unified framework for scalable machine unlearning with multiple baselines.
+    url: https://github.com/MakrooOwais/SALSA
+  - title: SIREN - Explainable AI Framework
+    description: Interpretability framework for detecting AI-generated images.
+    url: https://github.com/MakrooOwais/SIREN
+  - title: LoRA for Vision Transformers
+    description: Lightweight adaptation framework for Vision Transformers using LoRA
+    url: https://github.com/MakrooOwais/LoRA-ViT-Pipeline
+  - title: Transformer from Scratch (PyTorch Lightning)
+    description: Full Transformer implementation from scratch with multi-head attention
+      and sequence-to-sequence training for machine translation.
+    url: https://github.com/MakrooOwais/Transformer_Translator
+  - title: Universal Function Estimation with Neural Networks
+    description: Experimental study of the Universal Approximation Theorem using neural
+      networks of varying depth and width.
+    url: https://github.com/MakrooOwais/Universal_Fn_Approx
+  - title: Multi-Headed Deep Feature Learning for PPGL Genetic Cluster Classification
+    description: Official implementation of the paper introducing a multi-headed,
+      region-aware model for PPGL genetic subtype classification from CT scans.
+    url: https://github.com/MakrooOwais/CT_Region_Linear
+  - title: TorchOptimizer
+    description: Scalable Bayesian optimization framework for PyTorch models.
+    url: https://github.com/MakrooOwais/torchoptimizer
+  - title: PyPopSim - Population Simulator
+    description: Stochastic ecological simulator with predator-prey dynamics.
+    url: https://github.com/MakrooOwais/pypopsim

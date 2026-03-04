@@ -1,0 +1,34 @@
+research:
+  description: Work at the intersection of privacy, robustness, training dynamics,
+    and large-scale learning systems.
+  papers:
+  - title: 'ReSuMe: Retriever-Summarizer Mutual Enhancement via Reinforcement Learning'
+    venue: The Web Conference (WWW) 2026
+    links:
+    - text: View Paper →
+      url: https://drive.google.com/file/d/1WmF8cp56L4qsVG2fg_ykzMUwEGRCe6-v/view?usp=drive_link
+  - title: 'The Hidden Cost of Modeling P(x): Membership Inference Attacks in Generative
+      Text Classifiers'
+    venue: NeurIPS 2025 Workshop · TMLR Extended Version (Under Review)
+    links:
+    - text: Workshop →
+      url: https://neurips.cc/virtual/2025/loc/san-diego/130227
+    - text: Preprint →
+      url: https://arxiv.org/html/2510.16122v1
+  - title: 'SALSA: A Secure, Adaptive and Label-Agnostic Scalable Algorithm for Machine
+      Unlearning'
+    venue: UAI 2025
+    links:
+    - text: View Paper →
+      url: https://proceedings.mlr.press/v286/makroo25a.html
+  - title: Enhanced Identification of Pheochromocytoma and Paragangliomas' Genetic
+      Clusters from CT
+    venue: SPIE Medical Imaging 2025
+    links:
+    - text: View Paper →
+      url: https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13407/134071B/Enhanced-identification-of-pheochromocytoma-and-paragangliomas-genetic-clusters-from-CT/10.1117/12.3047387.full
+  - title: Detecting Dataset Outliers via Training Dynamics Clustering
+    venue: UAI 2026 (Under Review)
+  - title: Multi-Headed Deep Feature Learning for Genetic Clusters Identification
+      from CT
+    venue: Biomedical Signal Processing & Control (Under Review)
