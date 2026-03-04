@@ -5,8 +5,8 @@ hero:
     dynamics. Incoming Applied Scientist at Amazon.
   description: I build AI systems that live between clean math and messy production,
     thinking about privacy, robustness, machine unlearning, and training dynamics.
-  cv_link: cv.pdf
+  cv_link: assets/cv.pdf
   email: makroo.owais@gmail.com
   linkedin: https://linkedin.com/in/makroo-owais
   github: https://github.com/MakrooOwais
-  background_image: background.png
+  background_image: images/background.png

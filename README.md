@@ -4,16 +4,16 @@ A personal portfolio built with HTML, Tailwind CSS, and a custom Python static s
 
 ## Project Structure
 
-- `data/`: A directory containing YAML files with all the content for the portfolio (experience, research, projects, writing, etc.). Update these files to change the text and links on your website.
-- `template.html`: A Jinja2 HTML template. It defines the structure, layout, and styling (using Tailwind CSS) of the website.
-- `build.py`: A Python script that reads the YAML files from the `data/` directory and injects their content into `template.html` to generate the final `index.html`.
+- `assets/data/`: A directory containing YAML files with all the content for the portfolio (experience, research, projects, writing, etc.). Update these files to change the text and links on your website.
+- `assets/template.html`: A Jinja2 HTML template. It defines the structure, layout, and styling (using Tailwind CSS) of the website.
+- `build.py`: A Python script that reads the YAML files from the `assets/data/` directory and injects their content into `template.html` to generate the final `index.html`.
 - `index.html`: The generated static website. **Do not edit this directly**, as your changes will be overwritten the next time you run the build script.
 
 ## How `build.py` Works
 
 The `build.py` script acts as a minimalist static site generator. Here is a step-by-step breakdown of its process:
 
-1. **Reads Data:** It uses the `pyyaml` library to load all the YAML files in the `data/` directory and combines them into a single Python dictionary.
+1. **Reads Data:** It uses the `pyyaml` library to load all the YAML files in the `assets/data/` directory and combines them into a single Python dictionary.
 2. **Configures Jinja2:** It sets up a Jinja2 environment and adds custom filters (like `tojson`, which safely converts Python lists into JSON strings so they can be read by JavaScript inside the template).
 3. **Loads Template:** It loads the `template.html` file from the current directory.
 4. **Renders HTML:** It passes the loaded data dictionary into the Jinja2 template. The template engine replaces the `{{ variable }}` placeholders and executes logic blocks (like `{% for item in list %}`) using the provided data, generating the final HTML string.

@@ -7,7 +7,7 @@ import subprocess
 
 def build():
     data = {}
-    data_dir = 'data'
+    data_dir = 'assets/data'
     
     # Load all YAML files from the data directory
     if os.path.exists(data_dir):
@@ -23,7 +23,7 @@ def build():
             with open('data.yaml', 'r', encoding='utf-8') as file:
                 data = yaml.safe_load(file)
     
-    env = Environment(loader=FileSystemLoader('.'))
+    env = Environment(loader=FileSystemLoader('assets'))
     env.filters['tojson'] = json.dumps
     
     template = env.get_template('template.html')
