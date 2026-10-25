@@ -4,14 +4,12 @@ extracurriculars:
   - id: lifting
     title: Strength & Athletics
     display_images:
-    - images/gym/4.jpg
     - images/gym/2.jpg
     - images/gym/1.jpg
     images:
     - images/gym/1.jpg
     - images/gym/2.jpg
     - images/gym/3.jpg
-    - images/gym/4.jpg
   - id: mountains
     title: Mountains & Water
     display_images:
