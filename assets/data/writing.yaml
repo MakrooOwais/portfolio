@@ -4,6 +4,9 @@ writing:
     of modern neural networks.
   featured_count: 3
   articles:
+    - title: "Not Devotion, but Indulgence: Love as a Permission Slip in Dostoevsky's The Gambler"
+      description: "Actions done for someone else have limits; indulgences do not. On how suffering for someone can disguise what we already wanted."
+      url: https://medium.com/@makroo.owais/not-devotion-but-indulgence-ec6a727fec88
     - title: "The Memory Erase Button: Identity, Responsibility, and the Value of Suffering"
       description: "Not a question of pain, but of authorship, what we choose to erase may be the very thing that wrote us."
       url: https://medium.com/p/7a02c36f8257
@@ -24,7 +27,7 @@ writing:
       description:
         A visual study of how neural networks progressively refine representations,
         turning abstract gradients into structured understanding.
-      url: http://medium.com/@owaismakroo17/visualizing-how-deep-learning-models-learn-line-art-animation-1aa5f3cfb25b
+      url: https://medium.com/@owaismakroo17/visualizing-how-deep-learning-models-learn-line-art-animation-1aa5f3cfb25b
     - title:
         "Visualizing the Feature Space of a Classification Model: An In-depth Exploration
         Using MNIST and PCA"

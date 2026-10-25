@@ -1,12 +1,13 @@
 hero:
   name: Owais Makroo
   short_role: Applied Scientist
-  role: Machine Learning Researcher focusing on privacy, robustness, and training
-    dynamics. Incoming Applied Scientist at Amazon.
+  role: Applied Scientist at Amazon and IIT Kharagpur graduate. Machine Learning
+    Researcher focusing on privacy, robustness, and training dynamics.
   description: I build AI systems that live between clean math and messy production,
     thinking about privacy, robustness, machine unlearning, and training dynamics.
   cv_link: assets/cv.pdf
   email: makroo.owais@gmail.com
   linkedin: https://linkedin.com/in/makroo-owais
   github: https://github.com/MakrooOwais
-  background_image: images/background.png
+  site_url: https://makrooowais.github.io/portfolio/
+  background_image: images/background.jpg

@@ -4,6 +4,7 @@ extracurriculars:
   - id: lifting
     title: Strength & Athletics
     display_images:
+    - images/gym/3.jpg
     - images/gym/2.jpg
     - images/gym/1.jpg
     images:

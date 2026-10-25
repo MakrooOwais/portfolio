@@ -5,9 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ hero.name }} | {{ hero.short_role }}</title>
-  <meta name="description"
-    content="{{ hero.name }} - {{ hero.role }}" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="{{ hero.name }} - {{ hero.role }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ hero.name }} | {{ hero.short_role }}" />
+  <meta property="og:description" content="{{ hero.role }}" />
+  {% if hero.site_url %}
+  <meta property="og:url" content="{{ hero.site_url }}" />
+  <meta property="og:image" content="{{ hero.site_url }}{{ hero.background_image }}" />
+  {% endif %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%233b82f6'/></svg>" />
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
 
 <body class="bg-[#0a0a0a] text-zinc-400">
@@ -33,11 +41,11 @@
           class="px-4 py-2 border border-zinc-700 rounded-full hover:text-blue-400">Email</a>
         {% endif %}
         {% if hero.linkedin %}
-        <a href="{{ hero.linkedin }}" target="_blank"
+        <a href="{{ hero.linkedin }}" target="_blank" rel="noopener noreferrer"
           class="px-4 py-2 border border-zinc-700 rounded-full hover:text-blue-400">LinkedIn</a>
         {% endif %}
         {% if hero.github %}
-        <a href="{{ hero.github }}" target="_blank"
+        <a href="{{ hero.github }}" target="_blank" rel="noopener noreferrer"
           class="px-4 py-2 border border-zinc-700 rounded-full hover:text-blue-400">GitHub</a>
         {% endif %}
       </div>
@@ -47,7 +55,7 @@
   <main class="max-w-5xl mx-auto px-6 pt-12 pb-24 space-y-24">
 
     <!-- RESEARCH -->
-    <section>
+    <section id="research">
       <h2 class="text-4xl text-white mb-6">Research</h2>
       <p class="text-zinc-400 max-w-2xl mb-12 leading-relaxed">
         {{ research.description }}
@@ -60,7 +68,7 @@
           {% if paper.links %}
           <div class="mt-3 flex gap-4 text-sm">
             {% for link in paper.links %}
-            <a href="{{ link.url }}" target="_blank"
+            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer"
               class="hover:text-blue-400">{{ link.text }}</a>
             {% endfor %}
           </div>
@@ -71,7 +79,7 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section>
+    <section id="experience">
       <h2 class="text-4xl text-white mb-6">Experience</h2>
       <p class="text-zinc-400 max-w-2xl mb-16 leading-relaxed">
         {{ experience.description }}
@@ -84,11 +92,14 @@
           <!-- Vertical Line -->
           <div class="absolute left-4 top-0 bottom-0 w-px bg-zinc-800"></div>
 
-          <div class="space-y-12 relative">
+          <div class="space-y-12 relative" role="tablist" aria-label="Experience">
             {% for job in experience.jobs %}
-            <!-- Node {{ loop.index }} -->
-            <button onmouseenter="selectExperience({{ loop.index0 }})" class="experience-node relative flex items-center gap-6 group">
-              <div class="node-dot w-8 h-8 rounded-full border-2 {% if loop.first %}border-blue-500 bg-blue-500{% else %}border-zinc-600 bg-[#0a0a0a]{% endif %} transition">
+            <button type="button" role="tab" aria-controls="experienceContent"
+              aria-selected="{{ 'true' if loop.first else 'false' }}"
+              onmouseenter="selectExperience({{ loop.index0 }})" onfocus="selectExperience({{ loop.index0 }})"
+              onclick="selectExperience({{ loop.index0 }})"
+              class="experience-node relative flex items-center gap-6 group text-left">
+              <div class="node-dot w-8 h-8 shrink-0 rounded-full border-2 {% if loop.first %}border-blue-500 bg-blue-500{% else %}border-zinc-600 bg-[#0a0a0a]{% endif %} transition">
               </div>
               <div>
                 <p class="text-white font-medium">{{ job.company }}</p>
@@ -100,8 +111,14 @@
 
         <!-- Content Panel -->
         <div class="md:col-span-2">
-          <div id="experienceContent"
+          <div id="experienceContent" role="tabpanel" aria-live="polite"
             class="p-8 rounded-2xl bg-[#111111] border border-zinc-800 transition duration-300">
+            {% set job = experience.jobs[0] %}
+            <h3 class="text-white text-xl font-medium mb-2">{{ job.title }}</h3>
+            <p class="text-sm text-blue-400 mb-6">{{ job.duration }}</p>
+            {% for point in job.points %}
+            <p class="text-zinc-400 mb-4">{{ point }}</p>
+            {% endfor %}
           </div>
         </div>
 
@@ -109,7 +126,7 @@
     </section>
 
     <!-- WRITING -->
-    <section>
+    <section id="writing">
       <h2 class="text-4xl text-white mb-6">Writing</h2>
       <p class="text-zinc-400 max-w-2xl mb-12 leading-relaxed">
         {{ writing.description }}
@@ -119,21 +136,21 @@
         <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
           <h3 class="text-zinc-200 font-medium">{{ article.title }}</h3>
           <p class="mt-3 text-sm text-zinc-400">{{ article.description }}</p>
-          <a href="{{ article.url }}" target="_blank" class="mt-4 inline-block text-sm hover:text-blue-400 transition">Read →</a>
+          <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block text-sm hover:text-blue-400 transition">Read →</a>
         </div>
         {% endfor %}
 
         {% if writing.articles|length > writing.featured_count %}
-        <div onclick="openModal('writingModal')"
+        <button type="button" onclick="openModal('writingModal')"
           class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 flex items-center justify-center cursor-pointer hover:border-blue-500 transition">
           <span class="text-blue-400 text-lg">View All Writing →</span>
-        </div>
+        </button>
         {% endif %}
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section>
+    <section id="projects">
       <h2 class="text-4xl text-white mb-6">Things I've Built</h2>
       <p class="text-zinc-400 max-w-2xl mb-12 leading-relaxed">
         {{ projects.description }}
@@ -143,39 +160,40 @@
         <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
           <h3 class="text-zinc-200 font-medium text-lg">{{ project.title }}</h3>
           <p class="mt-3 text-sm text-zinc-400">{{ project.description }}</p>
-          <a href="{{ project.url }}" target="_blank"
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
             class="mt-4 inline-block text-sm hover:text-blue-400 transition">View on GitHub →</a>
         </div>
         {% endfor %}
 
         {% if projects.project_list|length > projects.featured_count %}
-        <div onclick="openModal('projectsModal')"
+        <button type="button" onclick="openModal('projectsModal')"
           class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 flex items-center justify-center cursor-pointer hover:border-blue-500 transition">
           <span class="text-blue-400 text-lg">View All Projects →</span>
-        </div>
+        </button>
         {% endif %}
       </div>
     </section>
 
     <!-- EXTRACURRICULARS -->
-    <section>
+    <section id="beyond">
       <h2 class="text-4xl text-white mb-6">Beyond Research</h2>
       <p class="text-zinc-400 max-w-2xl mb-12 leading-relaxed">
         {{ extracurriculars.description }}
       </p>
       <div class="grid md:grid-cols-3 gap-12">
+        {% set stack_classes = ['rotate-[-6deg] shadow-xl', 'rotate-[4deg] shadow-xl', 'shadow-2xl group-hover:scale-105 transition duration-300'] %}
         {% for gallery in extracurriculars.galleries %}
-        <div class="relative group cursor-pointer" onclick="openGallery('{{ gallery.id }}')">
+        <button type="button" class="relative group cursor-pointer text-left" onclick="openGallery('{{ gallery.id }}')"
+          aria-label="Open {{ gallery.title }} gallery">
           <div class="relative w-full aspect-square">
-            <img src="{{ gallery.display_images[0] }}"
-              class="absolute inset-0 w-full h-full object-cover rounded-2xl rotate-[-6deg] shadow-xl">
-            <img src="{{ gallery.display_images[1] }}"
-              class="absolute inset-0 w-full h-full object-cover rounded-2xl rotate-[4deg] shadow-xl">
-            <img src="{{ gallery.display_images[2] }}"
-              class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition duration-300">
+            {% set stack = gallery.display_images[-3:] %}
+            {% for src in stack %}
+            <img src="{{ src }}" alt="" loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover rounded-2xl {{ stack_classes[loop.index0 + 3 - stack|length] }}">
+            {% endfor %}
           </div>
           <h3 class="mt-6 text-zinc-200 text-lg font-medium">{{ gallery.title }}</h3>
-        </div>
+        </button>
         {% endfor %}
       </div>
     </section>
@@ -183,29 +201,29 @@
   </main>
 
   <!-- GALLERY MODAL -->
-  <div id="galleryModal" class="fixed inset-0 bg-black/95 hidden z-50 overflow-y-auto">
+  <div id="galleryModal" class="fixed inset-0 bg-black/95 hidden z-50 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
     <div class="max-w-6xl mx-auto px-6 py-16">
       <div class="flex justify-between items-center mb-12">
         <h3 id="galleryTitle" class="text-white text-2xl"></h3>
-        <button onclick="closeModal('galleryModal')" class="text-zinc-400 hover:text-white text-lg">✕</button>
+        <button type="button" onclick="closeModal('galleryModal')" class="text-zinc-400 hover:text-white text-lg" aria-label="Close">✕</button>
       </div>
       <div id="galleryGrid" class="grid md:grid-cols-3 gap-6"></div>
     </div>
   </div>
 
   <!-- WRITING MODAL -->
-  <div id="writingModal" class="fixed inset-0 bg-black/95 hidden z-50 overflow-y-auto">
+  <div id="writingModal" class="fixed inset-0 bg-black/95 hidden z-50 overflow-y-auto" role="dialog" aria-modal="true" aria-label="All Writing">
     <div class="max-w-6xl mx-auto px-6 py-16">
       <div class="flex justify-between items-center mb-12">
         <h3 class="text-white text-2xl">All Writing</h3>
-        <button onclick="closeModal('writingModal')" class="text-zinc-400 hover:text-white text-lg">✕</button>
+        <button type="button" onclick="closeModal('writingModal')" class="text-zinc-400 hover:text-white text-lg" aria-label="Close">✕</button>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         {% for article in writing.articles %}
         <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
           <h3 class="text-zinc-200 font-medium">{{ article.title }}</h3>
           <p class="mt-3 text-sm text-zinc-400">{{ article.description }}</p>
-          <a href="{{ article.url }}" target="_blank" class="mt-4 inline-block text-sm hover:text-blue-400 transition">Read →</a>
+          <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block text-sm hover:text-blue-400 transition">Read →</a>
         </div>
         {% endfor %}
       </div>
@@ -213,18 +231,18 @@
   </div>
 
   <!-- PROJECTS MODAL -->
-  <div id="projectsModal" class="fixed inset-0 bg-black/95 hidden z-50 overflow-y-auto">
+  <div id="projectsModal" class="fixed inset-0 bg-black/95 hidden z-50 overflow-y-auto" role="dialog" aria-modal="true" aria-label="All Projects">
     <div class="max-w-6xl mx-auto px-6 py-16">
       <div class="flex justify-between items-center mb-12">
         <h3 class="text-white text-2xl">All Projects</h3>
-        <button onclick="closeModal('projectsModal')" class="text-zinc-400 hover:text-white text-lg">✕</button>
+        <button type="button" onclick="closeModal('projectsModal')" class="text-zinc-400 hover:text-white text-lg" aria-label="Close">✕</button>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         {% for project in projects.project_list %}
         <div class="p-6 rounded-2xl bg-[#111111] border border-zinc-800 hover:border-blue-500 transition">
           <h3 class="text-zinc-200 font-medium">{{ project.title }}</h3>
           <p class="mt-3 text-sm text-zinc-400">{{ project.description }}</p>
-          <a href="{{ project.url }}" target="_blank"
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
             class="mt-4 inline-block text-sm hover:text-blue-400 transition">View on GitHub →</a>
         </div>
         {% endfor %}
@@ -233,90 +251,82 @@
   </div>
 
   <footer class="border-t border-zinc-800 py-12 text-center text-sm text-zinc-600">
-    © 2026 {{ hero.name }}
+    © {{ build_year }} {{ hero.name }}
   </footer>
 
   <script>
-    const galleries = {
-      {% for gallery in extracurriculars.galleries %}
-      "{{ gallery.id }}": {
-        title: "{{ gallery.title }}",
-        images: {{ gallery.images | tojson }}
-      }{% if not loop.last %},{% endif %}
-      {% endfor %}
-    };
+    const galleries = {{ extracurriculars.galleries | tojson }};
+    const experiences = {{ experience.jobs | tojson }};
+    const modalIds = ["galleryModal", "projectsModal", "writingModal"];
+    let lastFocused = null;
 
-    function openGallery(type) {
-      const { title, images } = galleries[type];
-      document.getElementById("galleryTitle").innerText = title;
+    function openGallery(id) {
+      const { title, images } = galleries.find(g => g.id === id);
+      document.getElementById("galleryTitle").textContent = title;
       const grid = document.getElementById("galleryGrid");
-      grid.innerHTML = images.map(src =>
-        `<img src="${src}" class="w-full rounded-xl object-cover hover:scale-105 transition duration-300">`
-      ).join("");
+      grid.replaceChildren(...images.map(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = title;
+        img.loading = "lazy";
+        img.className = "w-full rounded-xl object-cover hover:scale-105 transition duration-300";
+        return img;
+      }));
       openModal("galleryModal");
     }
 
     function openModal(id) {
-      document.getElementById(id).classList.remove("hidden");
+      lastFocused = document.activeElement;
+      const modal = document.getElementById(id);
+      modal.classList.remove("hidden");
       document.body.classList.add("overflow-hidden");
+      modal.querySelector("button").focus();
     }
 
     function closeModal(id) {
-      document.getElementById(id).classList.add("hidden");
+      const modal = document.getElementById(id);
+      if (modal.classList.contains("hidden")) return;
+      modal.classList.add("hidden");
       document.body.classList.remove("overflow-hidden");
+      if (lastFocused) lastFocused.focus();
     }
 
     // Close any open modal on Escape or backdrop click
     window.addEventListener("keydown", e => {
-      if (e.key === "Escape") {
-        ["galleryModal", "projectsModal", "writingModal"].forEach(closeModal);
-      }
+      if (e.key === "Escape") modalIds.forEach(closeModal);
     });
 
-    ["galleryModal", "projectsModal", "writingModal"].forEach(id => {
+    modalIds.forEach(id => {
       document.getElementById(id).addEventListener("click", e => {
         if (e.target.id === id) closeModal(id);
       });
     });
 
-    const experiences = [
-      {% for job in experience.jobs %}
-      {
-        title: "{{ job.title }}",
-        duration: "{{ job.duration }}",
-        content: `
-          {% for point in job.points %}
-          <p class="text-zinc-400 mb-4">{{ point }}</p>
-          {% endfor %}
-        `
-      }{% if not loop.last %},{% endif %}
-      {% endfor %}
-    ];
-
-    function selectExperience(index) {
-      const contentDiv = document.getElementById("experienceContent");
-      const exp = experiences[index];
-
-      contentDiv.innerHTML = `
-      <h3 class="text-white text-xl font-medium mb-2">${exp.title}</h3>
-      <p class="text-sm text-blue-400 mb-6">${exp.duration}</p>
-      ${exp.content}
-    `;
-
-      document.querySelectorAll(".node-dot").forEach((dot, i) => {
-        if (i === index) {
-          dot.classList.remove("border-zinc-600", "bg-[#0a0a0a]");
-          dot.classList.add("border-blue-500", "bg-blue-500");
-        } else {
-          dot.classList.remove("border-blue-500", "bg-blue-500");
-          dot.classList.add("border-zinc-600", "bg-[#0a0a0a]");
-        }
-      });
+    function el(tag, className, text) {
+      const node = document.createElement(tag);
+      node.className = className;
+      node.textContent = text;
+      return node;
     }
 
-    // Default selection
-    selectExperience(0);
+    function selectExperience(index) {
+      const exp = experiences[index];
+      document.getElementById("experienceContent").replaceChildren(
+        el("h3", "text-white text-xl font-medium mb-2", exp.title),
+        el("p", "text-sm text-blue-400 mb-6", exp.duration),
+        ...exp.points.map(point => el("p", "text-zinc-400 mb-4", point))
+      );
 
+      document.querySelectorAll(".experience-node").forEach((node, i) => {
+        const active = i === index;
+        node.setAttribute("aria-selected", active);
+        const dot = node.querySelector(".node-dot");
+        dot.classList.toggle("border-blue-500", active);
+        dot.classList.toggle("bg-blue-500", active);
+        dot.classList.toggle("border-zinc-600", !active);
+        dot.classList.toggle("bg-[#0a0a0a]", !active);
+      });
+    }
   </script>
 
 </body>

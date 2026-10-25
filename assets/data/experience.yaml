@@ -2,6 +2,16 @@ experience:
   description: A progression through scale, research depth, and production responsibility.
   jobs:
   - company: Amazon
+    title: Amazon · Applied Scientist I (Search and Measurement)
+    duration: Jun 2026 - Present · Bengaluru
+    points:
+    - Joined full-time after graduating from IIT Kharagpur, returning to Amazon Search
+      after my internship with Core Search.
+    - Building ML models and evaluation methods to measure and improve the quality of
+      search at Amazon scale.
+    - Working across large-scale data pipelines, experimentation, and production systems
+      with scientists and engineers on the Search and Measurement team.
+  - company: Amazon (Intern)
     title: Amazon · Applied Scientist Intern (Core Search)
     duration: May 2025 - Nov 2025 · Bengaluru
     points:
